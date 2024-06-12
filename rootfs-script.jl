@@ -37,6 +37,5 @@ artifact_hash, tarball_path, = debootstrap(arch, image; archive, packages) do ro
     my_chroot(cmd)
 end
 
-@info artifact_hash
-@info tarball_path
+upload_gha(tarball_path)
 test_sandbox(artifact_hash)
