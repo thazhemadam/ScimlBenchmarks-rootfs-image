@@ -1,0 +1,3 @@
+[deps]
+RootfsUtils = "ea0daf2f-8d67-45cc-b2d9-fd898f843992"
+Sandbox = "9307e30f-c43e-9ca7-d17c-c2dc59df670d"
