@@ -14,6 +14,7 @@ packages = [
     "ca-certificates",
     "curl",
     "gnupg",
+    "gfortran",
     "git",
     "locales",
     "localepurge",
@@ -23,6 +24,7 @@ artifact_hash, tarball_path, = debootstrap(arch, image; archive, packages) do ro
     my_chroot(args...) = root_chroot(rootfs, "bash", "-eu", "-o", "pipefail", "-c", args...; ENV=chroot_ENV)
 
     cmd = """
+    # install openmodelica
     set -Eeu -o pipefail
     curl -fsSL http://build.openmodelica.org/apt/openmodelica.asc | gpg --dearmor -o /usr/share/keyrings/openmodelica-keyring.gpg
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/openmodelica-keyring.gpg] \
